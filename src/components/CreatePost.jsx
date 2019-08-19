@@ -2,7 +2,7 @@ import React from 'react';
 
 const CreatePost = () => {
     return (
-        <h1>CreatePost</h1>
+        <h1 className='center'>CreatePost</h1>
     )
 }
 
