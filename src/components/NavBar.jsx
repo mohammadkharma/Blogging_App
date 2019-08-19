@@ -1,14 +1,15 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom'
 
 const NavBar = () => {
     return (
         <nav className="nav-wrapper red darken-3">
             <div className="container">
-                <a href='/' className="brand-logo">Blogging</a>
+                <NavLink to='/' className="brand-logo">Blogging</NavLink>
                 <ul className="right">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/createPost">CreatePost</a></li>
-                    <li><a href="/showCurrentPosts">ShowCurrentPosts</a></li>
+                    <li><NavLink to="/">Home</NavLink></li>
+                    <li><NavLink to="/createPost">CreatePost</NavLink></li>
+                    <li><NavLink to="/showCurrentPosts">ShowCurrentPosts</NavLink></li>
                 </ul>
             </div>
         </nav>
