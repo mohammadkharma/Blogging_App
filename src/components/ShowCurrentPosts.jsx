@@ -1,8 +1,17 @@
 import React from 'react';
+import '../styles/showCurrentPosts.css'
+
 
 const ShowCurrentPosts = () => {
+
+    // componentDidMount() { show posts }
+
     return (
-        <h1 className='center'>ShowCurrentPosts</h1>
+        <div className="showPosts">
+        <h2>Post Title</h2>
+        <a href="/">post content</a>
+        <p>Username + Date</p>
+        </div>
     )
 }
 

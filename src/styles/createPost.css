@@ -1,0 +1,19 @@
+form {
+    text-align: center;
+    width: 30vw;
+    display: block;
+    margin: auto;
+    margin-top: 5rem;
+}
+
+.formRow {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+}
+
+span {
+    width: 100px;
+    text-align: left;
+}
+
