@@ -3,8 +3,8 @@ import NavBar from './components/NavBar';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import CreatePost from './components/CreatePost';
-import ShowCurrentPosts from './components/ShowCurrentPosts';
-import Post from './components/Post';
+import ShowAllPosts from './components/ShowAllPosts';
+import ShowSinglePost from './components/ShowSinglePost';
 
 
 class App extends Component {
@@ -24,8 +24,8 @@ class App extends Component {
         <Switch>
         <Route exact path='/' component={Home} />
         <Route path='/createPost' component={CreatePost} />
-        <Route path='/showCurrentPosts' component={ShowCurrentPosts} />
-        <Route path='/:path_id' component={Post} />
+        <Route path='/showAllPosts' component={ShowAllPosts} />
+        <Route path='/:path_id' component={ShowSinglePost} />
         </Switch>
       </div>
       </BrowserRouter>
