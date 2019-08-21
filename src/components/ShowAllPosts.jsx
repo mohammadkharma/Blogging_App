@@ -5,19 +5,16 @@ import { Link } from 'react-router-dom';
 
 class ShowAllPosts extends Component {
 
-    sliceContent = (content) => {
-        const slicedContent = content.split('').slice(0, 35).join('');
-        return slicedContent;
-    }
+   
     
     render() {
+        // console.log('props', this.props)
         const { posts } = this.props;
         const postList = posts.length ? (
             posts.map(post => {
                 return(
                     <div className="postCard" key={post.id}>
                     <Link to={'/' + post.id} ><h3>{post.title}</h3></Link>
-                    <p>{this.sliceContent(post.content)}...</p>
                     </div>
                 )
             })

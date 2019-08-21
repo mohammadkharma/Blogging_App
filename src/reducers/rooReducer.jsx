@@ -7,6 +7,8 @@ const initState = {
 }
 
 const rootReducer = (state = initState, action) => {
+    // console.log('state', state)
+    // console.log('actions', action)
     if(action.type === 'DELETE_POST') {
         let newPosts = state.posts.filter(post => {
             return action.id !== post.id;
@@ -14,6 +16,11 @@ const rootReducer = (state = initState, action) => {
         return {
             ...state,
             posts: newPosts
+        }
+    }
+    if(action.type === 'ADD_POST') {
+        return {
+            posts: [...state.posts, action.post]
         }
     }    
     return state;

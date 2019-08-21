@@ -1,33 +1,52 @@
 import React, { Component } from 'react';
-import uuid from 'uuid';
+import { connect } from 'react-redux';
+// import uuid from 'uuid';
 import '../styles/createPost.css';
 
 class CreatePost extends Component {
     
-    handleSubmit = (e) => {
+    state = {
+        post: {}
+    }
+
+    handleClick = (e) => {
         e.preventDefault();
         const username = document.querySelector('#username');
         const title = document.querySelector('#title');
         const content = document.querySelector('#content');
+        // let UI = uuid.v4();
         this.setState({
-            post: [
-                {username: username.value, title: title.value, content: content.value, id: uuid.v4()}
-            ]
+            post: {id: 5, username: username.value, title: title.value, content: content.value}
         })
         
     }
 
     render(){
-        console.log(this.state);
+        // console.log(this.state.post)
+        this.props.addPost(this.state.post);
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form>
                 <div className='formRow'><span>Username:</span><input type="text" id="username" /></div>
                 <div className='formRow'><span>Title:</span><input type="text" id="title" /></div>
                 <div className='formRow'><span>Content:</span><input type="text" id="content" /></div>
-                <input type="submit" value="Create a post" />
+                <input type="submit" value="Create a post" onClick={this.handleClick} />
             </form>
         )
     }
 }
 
-export default CreatePost;
+// const mapStateToProps = (state, ownProps) => {
+//     let id = ownProps.match.params.path_id;
+//     return {
+//         post: state.posts[id - 1]
+//     }
+// }
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addPost: (post) => { dispatch({type: 'ADD_POST', post: post}) }
+    }
+}
+
+export default connect(null, mapDispatchToProps)(CreatePost);
+// export default CreatePost;
