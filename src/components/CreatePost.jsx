@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
+import uuid from 'uuid';
 import '../styles/createPost.css';
 
 class CreatePost extends Component {
     
-    componentDidMount(){
-        console.log(this.props)
-    }
-
     handleSubmit = (e) => {
         e.preventDefault();
         const username = document.querySelector('#username');
@@ -14,7 +11,7 @@ class CreatePost extends Component {
         const content = document.querySelector('#content');
         this.setState({
             post: [
-                {username: username.value, title: title.value, content: content.value}
+                {username: username.value, title: title.value, content: content.value, id: uuid.v4()}
             ]
         })
         
@@ -24,9 +21,9 @@ class CreatePost extends Component {
         console.log(this.state);
         return (
             <form onSubmit={this.handleSubmit}>
-                <div className='formRow'><span>Username:</span> <input type="text" id="username" /></div>
-                <div className='formRow'><span>Title:</span> <input type="text" id="title" /></div>
-                <div className='formRow'><span>Content:</span> <input type="text" id="content" /></div>
+                <div className='formRow'><span>Username:</span><input type="text" id="username" /></div>
+                <div className='formRow'><span>Title:</span><input type="text" id="title" /></div>
+                <div className='formRow'><span>Content:</span><input type="text" id="content" /></div>
                 <input type="submit" value="Create a post" />
             </form>
         )

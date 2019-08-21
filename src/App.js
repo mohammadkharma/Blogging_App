@@ -9,12 +9,6 @@ import ShowSinglePost from './components/ShowSinglePost';
 
 class App extends Component {
   
-  state = {
-    posts: []
-  }
-
-  
-
   render() {
     return (
       /* surrounding the App with a <BrowserRouter> tag, in order to create routes inside it */
