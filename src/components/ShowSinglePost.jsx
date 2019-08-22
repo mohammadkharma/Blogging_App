@@ -6,7 +6,7 @@ class ShowSinglePost extends Component {
 
     handleClick = () => {
         this.props.deletePost(this.props.post.id);
-        this.props.history.push('/showAllPosts');
+        this.props.history.push('/createPost');
     }
 
     render() {
@@ -35,7 +35,7 @@ class ShowSinglePost extends Component {
 const mapStateToProps = (state, ownProps) => {
     let id = ownProps.match.params.path_id;
     return {
-        post: state.posts[id - 1]
+        post: state.posts.find(post => post.id === id)
     }
 }
 

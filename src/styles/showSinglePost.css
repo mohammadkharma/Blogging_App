@@ -2,6 +2,11 @@
     margin-top: 5rem;
 }
 
-.post h4 {
+.post h4, .post p {
     text-align: center;
+}
+
+.post button {
+    display: block;
+    margin: auto;
 }

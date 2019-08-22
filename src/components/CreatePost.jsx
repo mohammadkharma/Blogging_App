@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import uuid from 'uuid';
+import uuid from 'uuid';
 import '../styles/createPost.css';
 
 class CreatePost extends Component {
@@ -14,11 +14,13 @@ class CreatePost extends Component {
         const username = document.querySelector('#username');
         const title = document.querySelector('#title');
         const content = document.querySelector('#content');
-        // let UI = uuid.v4();
+        let UI = uuid.v4();
         this.setState({
-            post: {id: 5, username: username.value, title: title.value, content: content.value}
+            post: {id: UI, username: username.value, title: title.value, content: content.value}
         })
-        
+        setTimeout(() => {
+            this.props.history.push('/showAllPosts');
+        }, 500)
     }
 
     render(){
