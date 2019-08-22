@@ -1,4 +1,52 @@
 .home {
     text-align: center;
     margin-top: 5rem;
+    height: 50px;
+    padding: 10px;
+    background-image: linear-gradient(rgb(235, 233, 233), white);
+}
+
+.home1 {
+    background: black;
+    height: 150px;
+}
+
+.home2 {
+    background: rgb(29, 29, 29);
+    height: 140px;
+}
+
+.home3 {
+    background: rgb(48, 48, 48);
+    height: 130px;
+}
+
+.home4 {
+    background: rgb(71, 71, 71);
+    height: 120px;
+}
+
+.home5 {
+    background: rgb(94, 93, 93);
+    height: 110px;
+}
+
+.home6 {
+    background: rgb(128, 127, 127);
+    height: 100px;
+}
+
+.home7 {
+    background: rgb(146, 146, 146);
+    height: 90px;
+}
+
+.home8 {
+    background: rgb(177, 176, 176);
+    height: 80px;
+}
+
+.home9 {
+    background: rgb(218, 216, 216);
+    height: 70px;
 }

@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 
 class ShowAllPosts extends Component {
 
-   
-    
     render() {
         // console.log('props', this.props)
         const { posts } = this.props;
